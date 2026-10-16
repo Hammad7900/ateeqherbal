@@ -1,0 +1,736 @@
+/* ======================================
+   ATEEQHERBAL - PREMIUM NAVBAR
+====================================== */
+
+/* Remove top and side white space */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+:root {
+  --ah-green: #254b35;
+  --ah-dark-green: #173624;
+  --ah-leaf: #78966a;
+  --ah-gold: #b79b62;
+  --ah-cream: #fbfaf6;
+  --ah-text: #25362b;
+  --ah-muted: #777f75;
+  --ah-border: #e8e8df;
+}
+
+/* Announcement Bar */
+
+.announcement-bar {
+  min-height: 32px;
+  margin-top: 0;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--ah-dark-green);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-align: center;
+}
+
+.announcement-bar svg {
+  color: #c9d7b8;
+  font-size: 12px;
+}
+
+.announcement-divider {
+  color: var(--ah-gold);
+}
+
+/* Navbar Container */
+
+.ah-navbar {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background: rgba(255, 255, 252, 0.97);
+  border-bottom: 1px solid var(--ah-border);
+  transition:
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.ah-navbar:hover {
+  box-shadow: 0 8px 30px rgba(23, 54, 36, 0.07);
+}
+
+.ah-navbar-inner {
+  max-width: 1600px;
+  min-height: 110px;
+  margin: auto;
+  padding: 10px 5% 10px 2%; /* left padding kam = logo left ki taraf */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Brand Logo */
+
+.ah-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.ah-logo {
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin-left: -10px; /* thora aur left */
+  object-fit: cover; /* khali safed jagah crop ho jati hai */
+  object-position: center 48%;
+  mix-blend-mode: multiply; /* logo ka safed background navbar mein mix ho jata hai */
+  transition: transform 0.35s ease;
+}
+
+.ah-brand:hover .ah-logo {
+  transform: scale(1.04);
+}
+
+/* Navigation */
+
+.ah-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(17px, 2.2vw, 34px);
+}
+
+.ah-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ah-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 0;
+  color: var(--ah-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.15px;
+  white-space: nowrap;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Animated Underline */
+
+.ah-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background: var(--ah-leaf);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.ah-nav-link:hover,
+.ah-nav-link:focus-visible,
+.ah-nav-link.active {
+  color: var(--ah-leaf);
+}
+
+.ah-nav-link:hover::after,
+.ah-nav-link:focus-visible::after,
+.ah-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.ah-chevron {
+  font-size: 9px;
+  transition: transform 0.3s ease;
+}
+
+.ah-nav-item:hover .ah-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+
+.ah-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -18px;
+  min-width: 205px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid var(--ah-border);
+  border-top: 2px solid var(--ah-leaf);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 15px 35px rgba(23, 54, 36, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.ah-nav-item:hover .ah-dropdown,
+.ah-nav-item:focus-within .ah-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.ah-dropdown a {
+  display: block;
+  padding: 12px;
+  border-radius: 5px;
+  color: var(--ah-text);
+  text-decoration: none;
+  font-size: 12px;
+  transition:
+    padding-left 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.ah-dropdown a:hover {
+  padding-left: 18px;
+  color: var(--ah-green);
+  background: #f1f5ed;
+}
+
+/* Right-Side Icons */
+
+.ah-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.ah-icon-btn {
+  position: relative;
+  width: 35px;
+  height: 38px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: var(--ah-green);
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ah-icon-btn:hover {
+  color: var(--ah-leaf);
+  transform: translateY(-3px);
+}
+
+.ah-icon-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #edf2e9;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.ah-icon-btn:hover::before {
+  transform: scale(1.15);
+}
+
+.ah-cart-count {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: var(--ah-leaf);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.ah-menu-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--ah-border);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--ah-green);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Account Menu (login ke baad) */
+
+.ah-account {
+  position: relative;
+}
+
+.ah-account-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 210px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--ah-border);
+  border-top: 2px solid var(--ah-leaf);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 15px 35px rgba(23, 54, 36, 0.12);
+  text-align: left;
+  z-index: 1100;
+}
+
+.ah-account-name {
+  margin: 0;
+  color: var(--ah-green);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ah-account-email {
+  margin: 3px 0 14px;
+  color: var(--ah-muted);
+  font-size: 11px;
+  word-break: break-all;
+}
+
+.ah-account-menu button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--ah-green);
+  border-radius: 3px;
+  background: var(--ah-green);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.ah-account-menu button:hover {
+  background: transparent;
+  color: var(--ah-green);
+}
+
+/* Search Panel */
+
+.ah-search-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  border-top: 1px solid transparent;
+  transition:
+    grid-template-rows 0.35s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.ah-search-visible {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  border-top-color: var(--ah-border);
+}
+
+.ah-search-form {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.ah-search-visible .ah-search-form {
+  min-height: 70px;
+}
+
+.ah-search-form > svg {
+  color: var(--ah-leaf);
+}
+
+.ah-search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--ah-text);
+  font-size: 13px;
+}
+
+.ah-search-form button {
+  padding: 11px 22px;
+  border: 1px solid var(--ah-green);
+  border-radius: 3px;
+  background: var(--ah-green);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.ah-search-form button:hover {
+  background: transparent;
+  color: var(--ah-green);
+}
+
+.ah-mobile-actions {
+  display: none;
+}
+
+/* Laptop and Tablet */
+
+@media (max-width: 1100px) {
+  .ah-navbar-inner {
+    min-height: 96px;
+    gap: 22px;
+    padding-left: 2%;
+    padding-right: 3%;
+  }
+
+  .ah-nav-links {
+    gap: 17px;
+  }
+
+  .ah-nav-link {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+  }
+
+  .ah-nav-actions {
+    gap: 12px;
+  }
+
+  .ah-logo {
+    width: 255px;
+    height: 85px;
+    margin-left: -8px;
+  }
+}
+
+/* Mobile Navigation */
+
+@media (max-width: 850px) {
+  .ah-navbar-inner {
+    min-height: 84px;
+    padding: 10px 5% 10px 3%;
+    gap: 12px;
+  }
+
+  .ah-logo {
+    width: clamp(130px, 40vw, 200px);
+    height: auto;
+    aspect-ratio: 3 / 1;
+    margin-left: -6px;
+  }
+
+  .ah-nav-actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .ah-menu-toggle {
+    display: inline-flex;
+  }
+
+  .ah-nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 10px 6% 20px;
+    background: var(--ah-cream);
+    border-top: 1px solid var(--ah-border);
+    box-shadow: 0 18px 30px rgba(23, 54, 36, 0.1);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .ah-nav-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .ah-nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--ah-border);
+    font-size: 12px;
+  }
+
+  .ah-nav-link::after {
+    bottom: 0;
+    right: auto;
+    width: 50px;
+  }
+
+  .ah-nav-item {
+    width: 100%;
+    display: block;
+  }
+
+  .ah-nav-item > .ah-nav-link {
+    display: flex;
+  }
+
+  .ah-dropdown {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 5px 0 8px 12px;
+    border: none;
+    border-left: 2px solid var(--ah-leaf);
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .ah-nav-item:hover .ah-dropdown,
+  .ah-nav-item:focus-within .ah-dropdown {
+    display: block;
+  }
+
+  .ah-dropdown a {
+    padding: 12px;
+  }
+
+  .ah-mobile-actions {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .ah-mobile-actions a {
+    color: var(--ah-green);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+/* Small Phones */
+
+@media (max-width: 420px) {
+  .announcement-bar {
+    gap: 6px;
+    padding: 7px 8px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+
+  .announcement-divider,
+  .announcement-bar > span:last-child {
+    display: none;
+  }
+
+  .ah-navbar-inner {
+    min-height: 74px;
+    padding-left: 3%;
+    padding-right: 4%;
+  }
+
+  .ah-logo {
+    width: 38vw;
+    height: auto;
+    aspect-ratio: 3 / 1;
+    margin-left: -4px;
+  }
+
+  .ah-nav-actions {
+    gap: 3px;
+  }
+
+  .ah-icon-btn {
+    width: 30px;
+    font-size: 15px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .ah-navbar *,
+  .ah-navbar *::before,
+  .ah-navbar *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+/* --- Dropdown Hover Fix (Invisible Bridge) --- */
+.ah-nav-item {
+  position: relative;
+}
+
+.ah-dropdown {
+  /* Agar pehle se koi margin hai toh usay khatam kar dega */
+  margin-top: 0 !important; 
+  top: 100%; /* Yeh dropdown ko bilkul button ke neechay jor dega */
+}
+
+/* Yeh code ek na-nazar aane wala pull (invisible bridge) banayega */
+.ah-dropdown::after {
+  content: "";
+  position: absolute;
+  top: -25px; /* Button aur dropdown ke beech ka faasla */
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: transparent;
+}
+/* ==========================================
+   STICKY HEADER & MOVING TICKER BAR STYLES
+========================================== */
+
+.ah-sticky-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--ah-cream);
+  box-shadow: 0 4px 18px rgba(23, 54, 36, 0.08);
+}
+
+.ah-topbar {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  background-color: var(--ah-dark-green);
+  color: #f3f7f4;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(183, 155, 98, 0.3);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  box-sizing: border-box;
+}
+
+.ah-ticker-track {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  animation: ahTickerScroll 30s linear infinite;
+}
+
+.ah-topbar:hover .ah-ticker-track {
+  animation-play-state: paused;
+}
+
+.ah-ticker-group {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ah-ticker-item {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 20px;
+  color: #e8f0eb;
+}
+
+.ah-ticker-item strong {
+  color: var(--ah-gold);
+  font-weight: 700;
+}
+
+.ah-ticker-dot {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--ah-gold);
+  font-size: 10px;
+}
+
+@keyframes ahTickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

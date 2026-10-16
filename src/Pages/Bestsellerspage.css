@@ -1,0 +1,277 @@
+.bsl-page,
+.bsl-page * {
+  box-sizing: border-box;
+}
+
+.bsl-page {
+  min-height: 70vh;
+  padding: 32px 5.5% 64px;
+  background: #fbfbf4;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2a1b;
+}
+
+.bsl-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #3b4636;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.bsl-back:visited {
+  color: #3b4636;
+}
+
+.bsl-back:hover {
+  color: #24551e;
+  transform: translateX(-4px);
+}
+
+.bsl-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.bsl-title {
+  margin: 0;
+  color: #24391f;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.bsl-line {
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin-top: 10px;
+  background: #6f8f5f;
+  border-radius: 2px;
+}
+
+.bsl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.bsl-card {
+  min-width: 0;
+  transition: transform 0.3s ease;
+}
+
+.bsl-card:hover {
+  transform: translateY(-6px);
+}
+
+.bsl-image {
+  position: relative;
+  aspect-ratio: 1 / 1.05;
+  overflow: hidden;
+  background: #f4f1e8;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(49, 91, 43, 0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.bsl-card:hover .bsl-image {
+  box-shadow: 0 14px 26px rgba(49, 91, 43, 0.18);
+}
+
+.bsl-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bsl-card:hover .bsl-image img {
+  transform: scale(1.07);
+}
+
+.bsl-badge {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  padding: 4px 9px;
+  background: #24551e;
+  color: #ffffff;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.bsl-badge.is-new {
+  background: #2f6b28;
+}
+
+.bsl-info {
+  padding: 14px 4px 0;
+}
+
+.bsl-name {
+  margin: 0 0 8px;
+  color: #1f2a1b;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  transition: color 0.25s ease;
+}
+
+/* Agar naam link ban jaye to purple / underline na aaye */
+.bsl-name a,
+.bsl-name a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bsl-card:hover .bsl-name {
+  color: #315b2b;
+}
+
+.bsl-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.bsl-stars {
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 1;
+  background: linear-gradient(90deg, #f5a623 var(--fill), #d6d6c8 var(--fill));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bsl-reviews {
+  color: #5a6355;
+  font-size: 11px;
+}
+
+.bsl-price {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .bsl-page {
+    padding: 28px 4% 56px;
+  }
+
+  .bsl-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .bsl-page {
+    padding: 24px 14px 48px;
+  }
+
+  .bsl-heading {
+    margin-bottom: 24px;
+  }
+
+  .bsl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .bsl-name {
+    font-size: 13px;
+  }
+
+  .bsl-price {
+    font-size: 14px;
+  }
+}
+
+/* Small phone */
+
+@media (max-width: 380px) {
+  .bsl-page {
+    padding: 20px 10px 40px;
+  }
+
+  .bsl-grid {
+    gap: 10px;
+  }
+
+  .bsl-info {
+    padding: 10px 2px 0;
+  }
+
+  .bsl-name {
+    font-size: 12px;
+  }
+
+  .bsl-stars {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .bsl-reviews {
+    font-size: 10px;
+  }
+
+  .bsl-price {
+    font-size: 13px;
+  }
+}
+
+/* Touch devices par hover jump nahi hoga */
+
+@media (hover: none) {
+  .bsl-card:hover {
+    transform: none;
+  }
+
+  .bsl-card:hover .bsl-image img {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bsl-back,
+  .bsl-card,
+  .bsl-image img,
+  .bsl-name {
+    transition: none !important;
+  }
+}
+/* Card ab poora link hai */
+.bsl-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.bsl-link:visited {
+  color: inherit;
+}
+
+.bsl-link:focus-visible {
+  outline: 2px solid #315b2b;
+  outline-offset: 4px;
+  border-radius: 14px;
+}

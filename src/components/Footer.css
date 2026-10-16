@@ -1,0 +1,435 @@
+/* ==========================================
+   ATEEQ HERBAL — LUXURY GRAND FOOTER
+   (Position & Inline-Block Only, No Flex, No Root)
+========================================== */
+
+.ah-grand-footer {
+  position: relative;
+  width: 100%;
+  background-color: #fbfbf4; /* Matches upper section background */
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* ==========================================
+   1. WAVY TOP SVG
+========================================== */
+
+.ah-wave-wrapper {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: #fbfbf4;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.ah-wave-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 92px;
+}
+
+/* ==========================================
+   2. MAIN FOOTER BACKGROUND & CONTAINER
+========================================== */
+
+.ah-footer-main {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #132a1c 0%, #0b1a11 100%);
+  padding: 10px 0 30px;
+}
+
+.ah-footer-container {
+  position: relative;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   3. GRAND CONSULTATION BANNER
+========================================== */
+
+.ah-consult-banner {
+  position: relative;
+  width: 100%;
+  margin-bottom: 45px;
+  padding: 28px 34px;
+  background: linear-gradient(115deg, #1c3d29 0%, #152f20 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  box-sizing: border-box;
+}
+
+.ah-consult-text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 68%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.ah-consult-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #f3cf7a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ah-consult-text h3 {
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ah-consult-text p {
+  margin: 0;
+  color: #d6e6dc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ah-consult-action {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32%;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.ah-gold-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #e5c158 0%, #c79a3b 100%);
+  color: #0f2317 !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none !important;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(229, 193, 88, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ah-gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(229, 193, 88, 0.45);
+  background: linear-gradient(135deg, #f0d070 0%, #d4a746 100%);
+}
+
+/* ==========================================
+   4. THREE COLUMNS LAYOUT
+========================================== */
+
+.ah-cols-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 35px;
+}
+
+.ah-col {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.ah-col-brand {
+  width: 42%;
+  padding-right: 40px;
+}
+
+.ah-col-links {
+  width: 25%;
+  padding-right: 25px;
+}
+
+.ah-col-contact {
+  width: 33%;
+}
+
+/* Brand Styling */
+.ah-gold-pill {
+  display: inline-block;
+  padding: 5px 14px;
+  margin-bottom: 14px;
+  background-color: rgba(229, 193, 88, 0.14);
+  border: 1px solid rgba(229, 193, 88, 0.5);
+  color: #f3cf7a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  border-radius: 30px;
+}
+
+.ah-brand-title {
+  margin: 0 0 12px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ah-brand-desc {
+  margin: 0 0 20px 0;
+  color: #d2e3d8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ah-trust-badges {
+  position: relative;
+}
+
+.ah-badge-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Column Headings */
+.ah-col-heading {
+  position: relative;
+  margin: 0 0 22px 0;
+  padding-bottom: 10px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.ah-col-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 3px;
+  background-color: #e5c158;
+  border-radius: 3px;
+}
+
+/* High Visibility Active Links (Never turns blue/purple!) */
+.ah-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ah-link-list li {
+  margin-bottom: 14px;
+}
+
+.ah-link-list a,
+.ah-link-list a:visited {
+  position: relative;
+  display: inline-block;
+  color: #e2efe7 !important;
+  text-decoration: none !important;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ah-arrow {
+  display: inline-block;
+  margin-right: 8px;
+  color: #e5c158;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ah-link-list a:hover {
+  color: #f3cf7a !important;
+  transform: translateX(6px);
+}
+
+/* Contact Cards */
+.ah-contact-card,
+.ah-contact-card:visited {
+  position: relative;
+  display: block;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.ah-contact-card:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+  border-color: #e5c158;
+  transform: translateY(-3px);
+}
+
+.ah-card-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #234d34;
+  color: #f3cf7a;
+  border-radius: 50%;
+  font-size: 18px;
+  margin-right: 14px;
+}
+
+.ah-card-info {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 58px);
+}
+
+.ah-card-info small {
+  display: block;
+  color: #b8cfc1;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.ah-card-info strong {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.ah-delivery-note {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background-color: rgba(37, 211, 102, 0.12);
+  border-left: 3px solid #25d366;
+  border-radius: 6px;
+  color: #e2efe7;
+  font-size: 13px;
+}
+
+/* ==========================================
+   5. FOOTER BOTTOM BAR
+========================================== */
+
+.ah-footer-bottom {
+  position: relative;
+  width: 100%;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ah-copyright {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70%;
+  margin: 0;
+  color: #bdd1c5;
+  font-size: 13px;
+}
+
+.ah-top-btn,
+.ah-top-btn:visited {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  text-align: right;
+  color: #f3cf7a !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ah-top-btn:hover {
+  text-decoration: underline !important;
+}
+
+/* Floating WhatsApp Button */
+.wa-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  z-index: 999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wa-float:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.6);
+}
+
+.wa-float svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE FOR MOBILE & TABLET
+========================================== */
+
+@media (max-width: 850px) {
+  .ah-wave-wrapper,
+  .ah-wave-svg {
+    height: 55px;
+  }
+
+  .ah-consult-text,
+  .ah-consult-action {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .ah-consult-action {
+    margin-top: 18px;
+  }
+
+  .ah-col-brand,
+  .ah-col-links,
+  .ah-col-contact {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 32px;
+  }
+
+  .ah-copyright,
+  .ah-top-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,244 @@
+.promo-banner,
+.promo-banner * {
+  box-sizing: border-box;
+}
+
+.promo-banner {
+  width: 100%;
+  padding: 10px 3% 56px;
+  background: #fbfbf4;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.promo-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: center;
+  min-height: 260px;
+  background: #e4e1d3;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(49, 91, 43, 0.08);
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.promo-inner:hover {
+  box-shadow: 0 16px 30px rgba(49, 91, 43, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Left content */
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  padding: 36px 0 36px 6%;
+}
+
+.promo-title {
+  margin: 0 0 14px;
+  color: #1c2a1a;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.promo-text {
+  margin: 0 0 22px;
+  color: #3f4a3a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.promo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 11px 22px;
+  background: #2f4a25;
+  color: #ffffff;
+  border: 1px solid #2f4a25;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.promo-btn:visited {
+  color: #ffffff;
+}
+
+.promo-btn:hover {
+  background: #1d3517;
+  border-color: #1d3517;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.promo-btn:active {
+  transform: translateY(0);
+}
+
+.promo-btn:focus-visible {
+  outline: 2px solid #315b2b;
+  outline-offset: 3px;
+}
+
+/* Right image, fades into the left background */
+
+.promo-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  z-index: 1;
+}
+
+.promo-image::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #e4e1d3 0%,
+    rgba(228, 225, 211, 0) 35%
+  );
+  pointer-events: none;
+}
+
+.promo-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.promo-inner:hover .promo-image img {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .promo-banner {
+    padding: 10px 4% 48px;
+  }
+
+  .promo-inner {
+    min-height: 240px;
+  }
+
+  .promo-content {
+    padding-left: 5%;
+  }
+
+  .promo-text br {
+    display: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .promo-banner {
+    padding: 6px 14px 40px;
+  }
+
+  .promo-inner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    border-radius: 14px;
+  }
+
+  .promo-image {
+    position: relative;
+    order: -1;
+    width: 100%;
+    height: clamp(150px, 42vw, 190px);
+    background: #d9d5c3; /* image na ho to bhi achha lage */
+  }
+
+  .promo-image::before {
+    background: linear-gradient(
+      180deg,
+      rgba(228, 225, 211, 0) 55%,
+      #e4e1d3 100%
+    );
+  }
+
+  .promo-content {
+    padding: 8px 22px 28px;
+  }
+
+  .promo-title {
+    font-size: clamp(22px, 6vw, 26px);
+  }
+
+  .promo-title br,
+  .promo-text br {
+    display: none;
+  }
+
+  .promo-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Small phone */
+
+@media (max-width: 380px) {
+  .promo-banner {
+    padding: 6px 10px 34px;
+  }
+
+  .promo-content {
+    padding: 6px 16px 24px;
+  }
+
+  .promo-text {
+    font-size: 12px;
+  }
+
+  .promo-btn {
+    max-width: none;
+  }
+}
+
+/* Touch devices par hover jump nahi hoga */
+
+@media (hover: none) {
+  .promo-inner:hover {
+    transform: none;
+  }
+
+  .promo-inner:hover .promo-image img {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-inner,
+  .promo-btn,
+  .promo-image img {
+    transition: none !important;
+  }
+}

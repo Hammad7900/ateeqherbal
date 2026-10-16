@@ -1,0 +1,43 @@
+.atc-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.atc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2f6b3a;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.atc-btn:hover {
+  background: #265730;
+}
+
+.atc-btn:active {
+  transform: scale(0.98);
+}
+
+/* click ke baad 2 second ke liye */
+.atc-btn.atc-added {
+  background: #1f8f4a;
+}
+
+.atc-note {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #2f6b3a;
+}
